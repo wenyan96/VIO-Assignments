@@ -1,6 +1,6 @@
 # AS4
 
-![AS4_readme/Untitled.png](AS4%2054b6699fe329471baad5a7c11fb69b9f/Untitled.png)
+![AS4_readme/Untitled.png](AS4_readme/Untitled.png)
 
 ![AS4_readme/_05-28-2021_22.48_2.jpg](AS4_readme/_05-28-2021_22.48_2.jpg)
 
