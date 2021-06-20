@@ -135,8 +135,14 @@ else {
 待最小化的目标函数为：
 
 ![AS5_readme/Untitled%206.png](AS5_readme/Untitled%206.png)
+对于VIO来说,global position和global yaw不可观的后果就是:任意对全局z轴的旋转变换和全局平移都不会改变代价函数的大小,即存在多个最优解
 
 ![AS5_readme/Untitled%207.png](AS5_readme/Untitled%207.png)
+
+###补充:Gauge fixation和Gauge prior的处理方法:  
+使用LM算法得到增量后,第Q次迭代后的旋转量为:
+即使限制z轴分量为0,每一次迭代都会在上一次的基础上改变roll和pitch,使得这一帧的z轴和最初的z轴不重合,总的来说还是改变了yaw.  
+所以对第一帧的位姿更新都是对0时刻的更新(相当与只更新一次).如果使用Free Gauge的方式,需要在每次优化过后将第一帧的position和yaw重新拉回到起始状态,整个窗口内的优化变量都会因此更新
 
 ## 添加Prior约束
 
@@ -193,6 +199,9 @@ for (size_t i = 0; i < points.size(); ++i) {
         }
     }
 ```
+
+###补充:由于代码是仿真的单目系统,所以需要同时给第一帧和第二帧添加先验约束  
+先验边的残差和雅克比推导见ppt  
 
 - 如果将weight设置为0, 符合第二题表格所示, 相当与是free gauge的情况, 可以看到下图和之前gauge fixation的结果类似. 运行时间每一次都会有些不同, 平均看都差不多. 注意这里要把之前fixation的两行代码注释掉
 
