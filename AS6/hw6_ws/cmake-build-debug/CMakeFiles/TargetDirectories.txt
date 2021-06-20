@@ -1,3 +1,0 @@
-/home/wenyan/Documents/shenlan/VIO/AS/course6_hw/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/wenyan/Documents/shenlan/VIO/AS/course6_hw/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/wenyan/Documents/shenlan/VIO/AS/course6_hw/cmake-build-debug/CMakeFiles/estimate_depth.dir
